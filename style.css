@@ -1,0 +1,219 @@
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  background: #373636;
+  color: #fff;
+  display: center;
+}
+
+
+h1, h2, nav a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 100px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(240, 233, 233);
+}
+
+
+p {
+  text-align: center;   /* center text */
+  font-size: 28px;
+}
+
+.smaller-text {
+  font-size: 22px;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  background: #111;
+  padding: 1em 2em;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px; /* Adjust as needed */
+}
+
+.nav-links {
+  grid-column: 2;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.nav-links a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-links a:hover {
+  color: rgb(213, 4, 4);
+  border-bottom: 1px solid rgb(213, 4, 4);
+}
+
+section {
+  padding: 10px 0px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+input, textarea {
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border: none;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.7em;
+  border: none;
+  background: #f00;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #c00;
+}
+
+/* Image styles */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0px;
+  box-shadow: 0 0 2px rgba(12, 12, 12, 0.5);
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home-img {
+  display: block;  /* Removes extra space below image */
+  width: 100vw;    /* Full browser width */
+  height: auto;    /* Height adjusts automatically */
+  margin: 0px;
+  padding: 0px;
+}
+
+#mixing {
+  position: relative;
+  background-image: url('images/strip-backgr-faders.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 0;  /* adjust based on overlay size */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.fixed-overlay {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  max-width: clamp(800px, 85vw, 1200px);
+}
+
+.overlay-box {
+  position: static; /* natural stacking */
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2em;
+  color: #fff;
+  text-align: center;
+  width: 90%;
+  max-width: clamp(800px, 85vw, 1200px);
+}
+
+.mix-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1em; /* space between image and text */
+}
+
+
+
+@media (max-width: 768px) {
+  h1, h2, nav a {
+    font-size: 48px;  /* Reduce big headings/nav text on tablets/small laptops */
+  }
+
+  .nav-links {
+    gap: 0.5em;  /* Tighten up nav spacing */
+  }
+
+  .nav-links a {
+    font-size: 16px;  /* Smaller nav text */
+  }
+
+  .overlay-box {
+    width: 90%;       /* Let overlay box breathe on smaller screens */
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1, h2 {
+    font-size: 32px;  /* Even smaller headings for phones */
+  }
+
+  p {
+    font-size: 20px;  /* Slightly smaller body text */
+  }
+
+  .overlay-box {
+    width: 95%;       /* Almost full width on small devices */
+    padding: 1em;
+  }
+
+  .logo img {
+    height: 30px;     /* Smaller logo image */
+  }
+
+  .nav-links {
+    flex-direction: column;   /* Stack nav links vertically on very small screens */
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+}
