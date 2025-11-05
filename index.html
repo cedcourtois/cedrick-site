@@ -37,7 +37,7 @@
 
 <section id="mixing">
   <img src="images/mix.jpg" alt="Mix banner" class="mix-banner">
-  <div class="fixed-overlay">
+  <div class="fixed-overlay fade-up">
     <h2>Mixing</h2>
   </div>
 
@@ -71,9 +71,70 @@ This rate also includes up to 10 revisions
      <br> <br> <br>
       <H3>Listen</H3>
       <br> <br> <br>
- 
-
   </div>
+<div class="track">
+  <p> "Machine" — Metal</p>
+  <audio controls>
+    <source src="music/Machine.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p> "Been a long time" — Band: Earshot - Hard Rock</p>
+  <audio controls>
+    <source src="music/Been a long time.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>"Hope Im Wrong" — Dance-Pop-EDM</p>
+  <audio controls>
+    <source src="music/Hope Im Wrong.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>"Crazy" — Band: New Black 7even - Country Rock</p>
+  <audio controls>
+    <source src="music/Been a long time.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>Artist: Patrick Croome - singer songwriter</p>
+  <audio controls>
+    <source src="music/Singer songwriter.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>Jazz</p>
+  <audio controls>
+    <source src="music/Jazz.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>"Dance" — Artist: CRISS - Pop-EDM</p>
+  <audio controls>
+    <source src="music/Dance.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>"Mars" — Band: The Thieves About - Rock</p>
+  <audio controls>
+    <source src="music/Mars.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="track">
+  <p>"Find Myself" — Hard Rock</p>
+  <audio controls>
+    <source src="music/Find Myself.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
 
 </section>
 
@@ -154,5 +215,20 @@ Tom Curren ( 3x Surf World Champion ), RedBull Media House, Monster Energy, Mad 
     </form>
     <p>Feel free to reach out via the form above or through your preferred channels.</p>
   </section>
+
+  <script>
+  // Intersection Observer watches when .fade-up elements enter the viewport
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

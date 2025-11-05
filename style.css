@@ -132,43 +132,34 @@ img {
 }
 
 #mixing {
-  position: relative;
-  background-image: url('images/strip-backgr-faders.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 0;  /* adjust based on overlay size */
+  position: relative;         /* allows absolute positioning inside */
+  text-align: center;
+  color: white;
+}
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
+.mix-banner {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .fixed-overlay {
-  position: absolute;
-  top: 20%;
-  left: 50%;
+  position: absolute;         /* key change */
+  top: 10%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2em;
-  color: #fff;
-  text-align: center;
-  width: 90%;
-  max-width: clamp(800px, 85vw, 1200px);
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  pointer-events: none;       /* so clicks pass through */
 }
 
 .overlay-box {
-  position: static; /* natural stacking */
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2em;
-  color: #fff;
-  text-align: center;
-  width: 90%;
-  max-width: clamp(800px, 85vw, 1200px);
+  position: relative;
+  padding: 60px 20px;
+  color: #ddd;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .mix-banner {
@@ -225,4 +216,16 @@ img {
   .nav-links a {
     font-size: 14px;
   }
+
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
