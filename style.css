@@ -145,7 +145,7 @@ img {
 
 .fixed-overlay {
   position: absolute;         /* key change */
-  top: 10%;
+  top: 1%;
   left: 40%;
   transform: translate(-50%, -50%);
   color: white;
@@ -222,7 +222,7 @@ img {
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 2s ease, transform 1s ease;
 }
 
 .fade-up.visible {
